@@ -128,11 +128,11 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="relative w-full bg-[#0b132b] py-14 sm:py-20 border-b border-indigo-500/20 overflow-hidden select-none marquee-container">
-      {/* Ambient background indigo glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-96 bg-[#6366F1]/12 rounded-full blur-[160px] pointer-events-none" />
+    <section className="relative w-full bg-[#08080a] py-14 sm:py-20 border-b border-blue-500/20 overflow-hidden select-none marquee-container">
+      {/* Ambient background blue glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-96 bg-[#2563EB]/15 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Header with Luxury Kicker */}
+      {/* Header with Kicker */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -140,15 +140,15 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.25em] uppercase text-[#818CF8] mb-2.5 font-regal">
-            <Sparkles className="w-3.5 h-3.5 text-[#6366F1]" />
+          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.25em] uppercase text-[#60A5FA] mb-2.5 font-regal">
+            <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
             <span>Discover Campus Categories</span>
-            <Sparkles className="w-3.5 h-3.5 text-[#6366F1]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-luxury font-medium tracking-tight text-[#F8FAFC]">
             Explore Academic Wings & Facilities
           </h2>
-          <p className="mt-2.5 text-xs sm:text-sm text-indigo-200/80 font-light max-w-xl mx-auto">
+          <p className="mt-2.5 text-xs sm:text-sm text-blue-200/80 font-light max-w-xl mx-auto">
             Hover over any category to pause and explore our curriculum and campus amenities.
           </p>
         </motion.div>
@@ -157,11 +157,11 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
       {/* Left and Right Luxury Gradient Fade Masks */}
       <div
         aria-hidden="true"
-        className="absolute top-0 bottom-0 left-0 w-12 sm:w-36 bg-gradient-to-r from-[#0b132b] via-[#0b132b]/90 to-transparent z-20 pointer-events-none"
+        className="absolute top-0 bottom-0 left-0 w-12 sm:w-36 bg-gradient-to-r from-[#08080a] via-[#08080a]/90 to-transparent z-20 pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute top-0 bottom-0 right-0 w-12 sm:w-36 bg-gradient-to-l from-[#0b132b] via-[#0b132b]/90 to-transparent z-20 pointer-events-none"
+        className="absolute top-0 bottom-0 right-0 w-12 sm:w-36 bg-gradient-to-l from-[#08080a] via-[#08080a]/90 to-transparent z-20 pointer-events-none"
       />
 
       {/* ============================================================== */}
@@ -180,7 +180,7 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
             <div
               key={`row1-${item.id}-${idx}`}
               onClick={() => onCategoryClick(item.title)}
-              className="group relative w-48 sm:w-64 h-56 sm:h-72 rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f172a] border border-indigo-500/25 hover:border-[#6366F1] hover:shadow-[0_12px_35px_rgba(99,102,241,0.35)] shrink-0 transition-all duration-300 hover:scale-[1.03] cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 select-none"
+              className="group relative w-48 sm:w-64 h-56 sm:h-72 rounded-xl sm:rounded-2xl overflow-hidden bg-[#0e121a] border border-blue-500/25 hover:border-[#3B82F6] hover:shadow-[0_12px_35px_rgba(37,99,235,0.35)] shrink-0 transition-all duration-300 hover:scale-[1.03] cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 select-none"
             >
               {/* Background Image with Zoom & Dark Gradient */}
               <div className="absolute inset-0 bg-black">
@@ -188,30 +188,32 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
                   src={item.imageUrl}
                   alt={item.title}
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-112 filter brightness-[1.04]"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b132b] via-[#0b132b]/50 to-black/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-[#08080a]/50 to-black/20 pointer-events-none" />
               </div>
 
               {/* Top Badges */}
               <div className="relative z-10 flex items-center justify-between gap-1">
-                <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#0b132b]/85 backdrop-blur-md border border-indigo-500/40 text-[#F8FAFC]">
+                <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#08080a]/85 backdrop-blur-md border border-blue-500/40 text-[#F8FAFC]">
                   {item.category}
                 </span>
-                <span className="text-[7.5px] sm:text-[8.5px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#6366F1] text-white shadow-xs">
+                <span className="text-[7.5px] sm:text-[8.5px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#2563EB] text-white shadow-xs">
                   {item.tag}
                 </span>
               </div>
 
               {/* Bottom Details */}
               <div className="relative z-10 pt-2">
-                <h3 className="font-serif-luxury text-sm sm:text-base font-medium text-[#F8FAFC] group-hover:text-[#818CF8] transition-colors line-clamp-1 mb-1">
+                <h3 className="font-serif-luxury text-sm sm:text-base font-medium text-[#F8FAFC] group-hover:text-[#60A5FA] transition-colors line-clamp-1 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-[10px] sm:text-[11px] text-indigo-100/70 font-light line-clamp-1 leading-snug mb-2">
+                <p className="text-[10px] sm:text-[11px] text-blue-100/70 font-light line-clamp-1 leading-snug mb-2">
                   {item.subtitle}
                 </p>
-                <div className="pt-2 border-t border-indigo-500/20 flex items-center justify-between text-[10px] text-[#818CF8] group-hover:text-white transition-colors">
+                <div className="pt-2 border-t border-blue-500/20 flex items-center justify-between text-[10px] text-[#60A5FA] group-hover:text-white transition-colors">
                   <span className="font-regal font-semibold tracking-widest uppercase">
                     Explore Wing
                   </span>
@@ -239,7 +241,7 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
             <div
               key={`row2-${item.id}-${idx}`}
               onClick={() => onCategoryClick(item.title)}
-              className="group relative w-48 sm:w-64 h-56 sm:h-72 rounded-xl sm:rounded-2xl overflow-hidden bg-[#0f172a] border border-indigo-500/25 hover:border-[#6366F1] hover:shadow-[0_12px_35px_rgba(99,102,241,0.35)] shrink-0 transition-all duration-300 hover:scale-[1.03] cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 select-none"
+              className="group relative w-48 sm:w-64 h-56 sm:h-72 rounded-xl sm:rounded-2xl overflow-hidden bg-[#0e121a] border border-blue-500/25 hover:border-[#3B82F6] hover:shadow-[0_12px_35px_rgba(37,99,235,0.35)] shrink-0 transition-all duration-300 hover:scale-[1.03] cursor-pointer flex flex-col justify-between p-3.5 sm:p-4 select-none"
             >
               {/* Background Image with Zoom & Dark Gradient */}
               <div className="absolute inset-0 bg-black">
@@ -247,30 +249,32 @@ export const JPJewelsCategoryShowcase: React.FC<JPJewelsCategoryShowcaseProps> =
                   src={item.imageUrl}
                   alt={item.title}
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-112 filter brightness-[1.04]"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b132b] via-[#0b132b]/50 to-black/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-[#08080a]/50 to-black/20 pointer-events-none" />
               </div>
 
               {/* Top Badges */}
               <div className="relative z-10 flex items-center justify-between gap-1">
-                <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#0b132b]/85 backdrop-blur-md border border-indigo-500/40 text-[#F8FAFC]">
+                <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#08080a]/85 backdrop-blur-md border border-blue-500/40 text-[#F8FAFC]">
                   {item.category}
                 </span>
-                <span className="text-[7.5px] sm:text-[8.5px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#6366F1] text-white shadow-xs">
+                <span className="text-[7.5px] sm:text-[8.5px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm bg-[#2563EB] text-white shadow-xs">
                   {item.tag}
                 </span>
               </div>
 
               {/* Bottom Details */}
               <div className="relative z-10 pt-2">
-                <h3 className="font-serif-luxury text-sm sm:text-base font-medium text-[#F8FAFC] group-hover:text-[#818CF8] transition-colors line-clamp-1 mb-1">
+                <h3 className="font-serif-luxury text-sm sm:text-base font-medium text-[#F8FAFC] group-hover:text-[#60A5FA] transition-colors line-clamp-1 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-[10px] sm:text-[11px] text-indigo-100/70 font-light line-clamp-1 leading-snug mb-2">
+                <p className="text-[10px] sm:text-[11px] text-blue-100/70 font-light line-clamp-1 leading-snug mb-2">
                   {item.subtitle}
                 </p>
-                <div className="pt-2 border-t border-indigo-500/20 flex items-center justify-between text-[10px] text-[#818CF8] group-hover:text-white transition-colors">
+                <div className="pt-2 border-t border-blue-500/20 flex items-center justify-between text-[10px] text-[#60A5FA] group-hover:text-white transition-colors">
                   <span className="font-regal font-semibold tracking-widest uppercase">
                     Explore Wing
                   </span>

@@ -7,6 +7,7 @@ export const ContactSection: React.FC = () => {
   const [phone, setPhone] = useState('');
   const [query, setQuery] = useState('');
   const [enquirySent, setEnquirySent] = useState(false);
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   const handleEnquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,18 +140,39 @@ export const ContactSection: React.FC = () => {
                 </a>
               </div>
 
-              {/* Live Interactive Google Map Embed detected at 2-Mansarovar Park, Aji dem Chokdi, Gujarat 360003 */}
-              <div className="w-full h-72 sm:h-80 rounded-2xl bg-black relative overflow-hidden border border-indigo-500/25 shadow-inner">
+              {/* Live Interactive Google Map Embed at 2-Mansarovar Park, Aji dem Chokdi, Gujarat 360003 */}
+              <div className="w-full h-72 sm:h-80 rounded-2xl bg-[#090d16] relative overflow-hidden border border-indigo-500/25 shadow-inner">
+                {/* Instant Dark-Themed Map Skeleton & Preview Background before iframe renders */}
+                {!isMapLoaded && (
+                  <div className="absolute inset-0 bg-[#080d1a] flex flex-col items-center justify-center p-6 text-center z-0">
+                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#6366F1_1.5px,transparent_1.5px)] [background-size:16px_16px]" />
+                    <div className="relative z-10 flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-[#6366F1]/20 text-[#818CF8] flex items-center justify-center mb-3 animate-pulse border border-indigo-500/30">
+                        <MapPin className="w-6 h-6 text-[#6366F1]" />
+                      </div>
+                      <p className="text-xs font-regal font-semibold uppercase tracking-wider text-[#818CF8]">
+                        Loading Campus Map...
+                      </p>
+                      <p className="text-xs text-indigo-200/70 mt-1 max-w-xs">
+                        Shreyash Vidhyalay · 2-Mansarovar Park, Aji dem Chokdi, Gujarat 360003
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 <iframe
                   title="Shreyash Vidhyalay Location Map"
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent('2-Mansarovar Park, Aji dem Chokdi, Gujarat 360003')}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
-                  className="w-full h-full border-0 filter contrast-[1.05]"
-                  loading="lazy"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent('Shreyash Vidhyalay, 2-Mansarovar Park, Aji dem Chokdi, Gujarat 360003')}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  className={`w-full h-full border-0 filter contrast-[1.05] relative z-1 transition-opacity duration-500 ${
+                    isMapLoaded ? 'opacity-100' : 'opacity-90'
+                  }`}
+                  loading="eager"
+                  onLoad={() => setIsMapLoaded(true)}
                   allowFullScreen
                 />
 
                 {/* Floating Location Tag overlay */}
-                <div className="absolute top-3 left-3 pointer-events-none z-10 flex items-center gap-2 bg-[#0b132b]/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-indigo-500/30 shadow-lg text-[11px] text-[#F8FAFC]">
+                <div className="absolute top-3 left-3 pointer-events-none z-10 flex items-center gap-2 bg-[#0b132b]/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-indigo-500/40 shadow-lg text-[11px] text-[#F8FAFC]">
                   <span className="w-2 h-2 rounded-full bg-[#6366F1] animate-ping" />
                   <span className="font-semibold">Shreyash Vidhyalay · Aji Dam Chokdi</span>
                 </div>

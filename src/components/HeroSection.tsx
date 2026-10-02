@@ -68,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
   };
 
   return (
-    <section className="relative w-full bg-[#0b132b] text-[#F8FAFC] overflow-hidden border-b border-indigo-500/20">
+    <section className="relative w-full bg-[#08080a] text-[#F8FAFC] overflow-hidden border-b border-blue-500/20">
       {/* Main Full-Bleed Content Container */}
       <div className="relative min-h-[660px] lg:min-h-[720px] flex items-center">
         {/* Full Hero Background Video */}
@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
           ref={videoContainerRef}
           className="absolute inset-0 w-full h-full z-0 overflow-hidden"
         >
-          {/* Video spanning full background with subtle dark grading */}
+          {/* Video spanning full background with sleek dark grading */}
           <video
             ref={videoRef}
             src={SCHOOL_INFO.heroVideoUrl}
@@ -84,100 +84,101 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
             loop
             muted
             playsInline
-            className="w-full h-full object-cover object-center scale-105 brightness-[0.70] contrast-[1.08]"
+            preload="auto"
+            className="w-full h-full object-cover object-center scale-105 brightness-[0.68] contrast-[1.10]"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
           />
 
-          {/* Additional subtle dark scrim over entire video */}
-          <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+          {/* Additional dark scrim over video */}
+          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 
-          {/* Narrow Patti-Style vertical shaded gradient solely behind the text on the left */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-[520px] lg:w-[580px] bg-gradient-to-r from-[#0b132b]/95 via-[#0b132b]/70 to-transparent pointer-events-none" />
+          {/* Black shaded vertical gradient behind text */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-[520px] lg:w-[580px] bg-gradient-to-r from-black/95 via-black/75 to-transparent pointer-events-none" />
 
-          {/* Royal indigo ambient glow within the left patti */}
-          <div className="absolute inset-y-0 left-0 w-[420px] bg-[radial-gradient(ellipse_at_left,_rgba(99,102,241,0.22),_transparent_70%)] pointer-events-none" />
+          {/* Electric Blue ambient glow within the left shaded area */}
+          <div className="absolute inset-y-0 left-0 w-[420px] bg-[radial-gradient(ellipse_at_left,_rgba(37,99,235,0.22),_transparent_70%)] pointer-events-none" />
 
-          {/* Top & bottom subtle vignetting for framing */}
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0b132b]/90 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b132b] to-transparent pointer-events-none" />
+          {/* Top & bottom vignetting for framing */}
+          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/90 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08080a] to-transparent pointer-events-none" />
 
-          {/* Video Control Floating Badge in Indigo styling */}
-          <div className="absolute bottom-5 right-5 z-20 flex items-center gap-2 bg-[#0b132b]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-indigo-500/30 text-xs text-indigo-100 shadow-xl">
+          {/* Video Control Floating Badge */}
+          <div className="absolute bottom-5 right-5 z-20 flex items-center gap-2 bg-[#08080a]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-blue-500/30 text-xs text-blue-100 shadow-xl">
             <button
               onClick={togglePlay}
-              className="p-1 hover:text-[#818CF8] transition-colors cursor-pointer"
+              className="p-1 hover:text-[#60A5FA] transition-colors cursor-pointer"
               aria-label={isPlaying ? 'Pause video' : 'Play video'}
             >
               {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
             </button>
-            <span className="text-indigo-500/40">|</span>
+            <span className="text-blue-500/40">|</span>
             <button
               onClick={toggleMute}
-              className="p-1 hover:text-[#818CF8] transition-colors cursor-pointer"
+              className="p-1 hover:text-[#60A5FA] transition-colors cursor-pointer"
               aria-label={isMuted ? 'Unmute video' : 'Mute video'}
             >
-              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#818CF8]" />}
+              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#60A5FA]" />}
             </button>
-            <span className="text-indigo-500/40">|</span>
+            <span className="text-blue-500/40">|</span>
             <button
               onClick={handleFullscreen}
-              className="p-1 hover:text-[#818CF8] transition-colors cursor-pointer"
+              className="p-1 hover:text-[#60A5FA] transition-colors cursor-pointer"
               aria-label="Fullscreen"
             >
               <Maximize className="w-3.5 h-3.5" />
             </button>
-            <span className="text-[11px] font-mono text-[#818CF8] ml-1">
+            <span className="text-[11px] font-mono text-[#60A5FA] ml-1">
               {isMuted ? 'Muted' : 'Sound On'}
             </span>
           </div>
         </div>
 
-        {/* Left-Side Content Container (Side aligned, ultra-clean editorial layout with luxury fonts) */}
+        {/* Left-Side Content Container in Black Theme */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-20">
           <div className="max-w-2xl lg:max-w-xl text-left">
-            {/* Kicker / Eyebrow in Regal Font with Indigo Accent */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[#818CF8] uppercase mb-4 border-l-2 border-[#6366F1] pl-3 py-0.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#6366F1]" />
+            {/* Kicker / Eyebrow in Regal Font with Blue Accent */}
+            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase mb-4 border-l-2 border-[#2563EB] pl-3 py-0.5">
+              <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
               <span className="font-regal">Admissions Open {SCHOOL_INFO.session} · {SCHOOL_INFO.affiliation}</span>
             </div>
 
             {/* Giant Editorial Serif Headline */}
-            <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-[68px] font-medium tracking-tight text-[#F8FAFC] leading-[1.08] drop-shadow-md">
+            <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-[68px] font-medium tracking-tight text-white leading-[1.08] drop-shadow-md">
               Learn. Grow.{' '}
-              <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#A5B4FC] via-[#818CF8] to-[#6366F1] block sm:inline drop-shadow">
+              <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#93C5FD] via-[#60A5FA] to-[#2563EB] block sm:inline drop-shadow">
                 Achieve.
               </span>
             </h1>
 
-            {/* Subheading text with high contrast for perfect readability */}
+            {/* Subheading text */}
             <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-200 font-light leading-relaxed max-w-lg drop-shadow">
               A caring environment where every student is supported, encouraged and inspired to reach their highest potential.
             </p>
 
-            {/* Action Button - FOCAL ROYAL INDIGO CTA */}
+            {/* Action Button - ELECTRIC BLUE CTA */}
             <div className="mt-7 sm:mt-8 flex items-center">
               <button
                 onClick={onApplyClick}
-                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-gradient-to-r from-[#4F46E5] via-[#6366F1] to-[#4338CA] hover:from-[#6366F1] hover:to-[#4F46E5] text-[#F8FAFC] font-regal font-bold text-xs tracking-wider uppercase shadow-lg shadow-indigo-500/30 transition-all active:scale-95 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#3B82F6] hover:from-[#2563EB] hover:to-[#1D4ED8] text-white font-regal font-bold text-xs tracking-wider uppercase shadow-lg shadow-blue-500/30 transition-all active:scale-95 cursor-pointer"
               >
                 <span>Apply for Admission</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </button>
             </div>
 
-            {/* 3 Value Badges in Royal Indigo */}
-            <div className="mt-10 sm:mt-12 pt-7 border-t border-indigo-500/20 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-3 text-left">
+            {/* 3 Value Badges */}
+            <div className="mt-10 sm:mt-12 pt-7 border-t border-blue-500/20 grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-3 text-left">
               {/* Feature 1 */}
               <div className="flex items-start gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/30 text-[#818CF8] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/30 text-[#60A5FA] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   <Users className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <h4 className="text-[11px] font-regal font-bold text-[#F8FAFC] uppercase tracking-wider">
                     Supportive Mentors
                   </h4>
-                  <p className="text-[10px] text-indigo-200/80 mt-0.5 leading-snug">
+                  <p className="text-[10px] text-blue-200/80 mt-0.5 leading-snug">
                     Personal mentorship
                   </p>
                 </div>
@@ -185,14 +186,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
 
               {/* Feature 2 */}
               <div className="flex items-start gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/30 text-[#818CF8] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/30 text-[#60A5FA] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   <MonitorPlay className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <h4 className="text-[11px] font-regal font-bold text-[#F8FAFC] uppercase tracking-wider">
                     Smart Classrooms
                   </h4>
-                  <p className="text-[10px] text-indigo-200/80 mt-0.5 leading-snug">
+                  <p className="text-[10px] text-blue-200/80 mt-0.5 leading-snug">
                     AC & interactive digital
                   </p>
                 </div>
@@ -200,14 +201,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
 
               {/* Feature 3 */}
               <div className="flex items-start gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/30 text-[#818CF8] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <div className="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/30 text-[#60A5FA] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                   <ShieldCheck className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <h4 className="text-[11px] font-regal font-bold text-[#F8FAFC] uppercase tracking-wider">
                     Holistic Growth
                   </h4>
-                  <p className="text-[10px] text-indigo-200/80 mt-0.5 leading-snug">
+                  <p className="text-[10px] text-blue-200/80 mt-0.5 leading-snug">
                     Mind & moral character
                   </p>
                 </div>
@@ -217,16 +218,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
         </div>
       </div>
 
-      {/* Bottom Stats Strip with vertical dividers in Deep Blue & Indigo */}
-      <div className="border-t border-indigo-500/20 bg-[#070e1e]/95">
+      {/* Bottom Stats Strip */}
+      <div className="border-t border-blue-500/20 bg-[#040608]/95">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-indigo-500/20 py-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-blue-500/20 py-4">
             {/* Stat 1 */}
             <div className="py-2 px-4 text-center">
-              <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#818CF8] tracking-wide">
+              <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#60A5FA] tracking-wide">
                 1:20
               </div>
-              <div className="text-[10px] sm:text-[11px] text-indigo-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
+              <div className="text-[10px] sm:text-[11px] text-blue-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
                 Teacher-Student Ratio
               </div>
             </div>
@@ -236,17 +237,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
               <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#F8FAFC] tracking-wide">
                 NUR–XII
               </div>
-              <div className="text-[10px] sm:text-[11px] text-indigo-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
+              <div className="text-[10px] sm:text-[11px] text-blue-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
                 Comprehensive Curriculum
               </div>
             </div>
 
             {/* Stat 3 */}
             <div className="py-2 px-4 text-center">
-              <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#818CF8] tracking-wide">
+              <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#60A5FA] tracking-wide">
                 20+ Years
               </div>
-              <div className="text-[10px] sm:text-[11px] text-indigo-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
+              <div className="text-[10px] sm:text-[11px] text-blue-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
                 Educational Excellence
               </div>
             </div>
@@ -256,7 +257,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
               <div className="text-xl sm:text-2xl font-serif-luxury font-bold text-[#F8FAFC] tracking-wide">
                 100%
               </div>
-              <div className="text-[10px] sm:text-[11px] text-indigo-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
+              <div className="text-[10px] sm:text-[11px] text-blue-200/80 uppercase tracking-widest font-regal font-semibold mt-0.5">
                 Holistic Child Development
               </div>
             </div>

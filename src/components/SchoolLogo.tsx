@@ -42,6 +42,9 @@ export const SchoolLogo: React.FC<SchoolLogoProps> = ({
             src={SCHOOL_INFO.logoUrl}
             alt="Shreyash Vidhyalay Official Logo"
             className={`${currentSize.imgClass} object-contain rounded-full shadow-sm drop-shadow-md`}
+            loading="eager"
+            decoding="async"
+            referrerPolicy="no-referrer"
             onError={() => {
               // try CDN or SVG fallback
               if (SCHOOL_INFO.logoCdnUrl && SCHOOL_INFO.logoUrl !== SCHOOL_INFO.logoCdnUrl) {
@@ -146,7 +149,7 @@ export const SchoolLogo: React.FC<SchoolLogoProps> = ({
             </span>
             <span
               className={`font-heading font-semibold tracking-wide uppercase ${
-                variant === 'dark' ? 'text-[#818CF8]' : 'text-[#4F46E5]'
+                variant === 'dark' ? 'text-[#60A5FA]' : 'text-[#2563EB]'
               } ${currentSize.title}`}
             >
               VIDHYALAY
@@ -160,7 +163,7 @@ export const SchoolLogo: React.FC<SchoolLogoProps> = ({
             <span className="text-white/20">·</span>
             <span
               className={`font-medium tracking-wider uppercase ${
-                variant === 'dark' ? 'text-indigo-200/70' : 'text-slate-500'
+                variant === 'dark' ? 'text-blue-200/70' : 'text-slate-500'
               } ${currentSize.sub}`}
             >
               Estd. 2004

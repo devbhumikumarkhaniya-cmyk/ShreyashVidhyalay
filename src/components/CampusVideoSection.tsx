@@ -158,23 +158,23 @@ export const CampusVideoSection: React.FC = () => {
   };
 
   return (
-    <section id="campus-video" className="py-24 bg-[#0b132b] text-[#F8FAFC] relative overflow-hidden border-b border-indigo-500/20">
+    <section id="campus-video" className="py-24 bg-[#08080a] text-[#F8FAFC] relative overflow-hidden border-b border-blue-500/20">
       {/* Background patterns */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6366F1_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#6366F1]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#172554]/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-900/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-[#818CF8] mb-3 font-regal">
-            <Film className="w-4 h-4 text-[#6366F1]" />
+          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-[#60A5FA] mb-3 font-regal">
+            <Film className="w-4 h-4 text-[#3B82F6]" />
             <span>Campus Experience Reel</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-medium tracking-tight text-[#F8FAFC]">
             See Our School in Action
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-indigo-200/80 font-light leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-blue-200/80 font-light leading-relaxed">
             Take a glimpse into our classrooms, activities, learning environment and everyday school life at Shreyash Vidhyalay.
           </p>
         </div>
@@ -182,7 +182,7 @@ export const CampusVideoSection: React.FC = () => {
         {/* Premium 16:9 Video Player Container */}
         <div
           ref={containerRef}
-          className="relative mx-auto max-w-5xl rounded-3xl overflow-hidden shadow-2xl border border-indigo-500/30 bg-black group"
+          className="relative mx-auto max-w-5xl rounded-3xl overflow-hidden shadow-2xl border border-blue-500/30 bg-black group"
           onMouseEnter={() => setShowControls(true)}
         >
           {/* Target Element: Video Display Container */}
@@ -206,7 +206,7 @@ export const CampusVideoSection: React.FC = () => {
                 onClick={togglePlay}
                 className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] z-20 cursor-pointer transition-opacity"
               >
-                <div className="group/play flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-[#4F46E5] to-[#6366F1] text-white shadow-2xl shadow-indigo-500/30 hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/30 backdrop-blur-md">
+                <div className="group/play flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-[#1D4ED8] to-[#3B82F6] text-white shadow-2xl shadow-blue-500/30 hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/30 backdrop-blur-md">
                   <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-current ml-1" />
                 </div>
                 <p className="mt-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90 drop-shadow">
@@ -217,15 +217,15 @@ export const CampusVideoSection: React.FC = () => {
 
             {/* Top Bar with Live Tag and Sound Toggle */}
             <div className="absolute top-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#0b132b]/85 backdrop-blur-md rounded-lg border border-indigo-500/30 text-xs font-medium pointer-events-auto">
-                <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-[#6366F1] animate-ping' : 'bg-slate-400'}`} />
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#08080a]/85 backdrop-blur-md rounded-lg border border-blue-500/30 text-xs font-medium pointer-events-auto">
+                <span className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-[#3B82F6] animate-ping' : 'bg-slate-400'}`} />
                 <span>Shreyash Vidhyalay · Official Campus Video</span>
               </div>
 
               <div className="flex items-center gap-2 pointer-events-auto">
                 <button
                   onClick={toggleMute}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0b132b]/85 hover:bg-[#0f172a] backdrop-blur-md rounded-lg border border-indigo-500/30 text-white text-xs transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#08080a]/85 hover:bg-[#0e121a] backdrop-blur-md rounded-lg border border-blue-500/30 text-white text-xs transition-colors cursor-pointer"
                   aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
                 >
                   {isMuted ? (
@@ -235,8 +235,8 @@ export const CampusVideoSection: React.FC = () => {
                     </>
                   ) : (
                     <>
-                      <Volume2 className="w-4 h-4 text-[#818CF8]" />
-                      <span className="text-[11px] text-[#818CF8]">Sound On</span>
+                      <Volume2 className="w-4 h-4 text-[#60A5FA]" />
+                      <span className="text-[11px] text-[#60A5FA]">Sound On</span>
                     </>
                   )}
                 </button>
@@ -251,7 +251,7 @@ export const CampusVideoSection: React.FC = () => {
             >
               {/* Progress Slider */}
               <div className="mb-3 flex items-center gap-3">
-                <span className="font-mono text-xs text-[#818CF8]">
+                <span className="font-mono text-xs text-[#60A5FA]">
                   {formatTime(currentTime)}
                 </span>
                 <input
@@ -261,7 +261,7 @@ export const CampusVideoSection: React.FC = () => {
                   step="0.1"
                   value={currentTime}
                   onChange={handleSeek}
-                  className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#6366F1]"
+                  className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#2563EB]"
                   aria-label="Video scrubber"
                 />
                 <span className="font-mono text-xs text-slate-400">
@@ -274,7 +274,7 @@ export const CampusVideoSection: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={togglePlay}
-                    className="p-1.5 hover:text-[#818CF8] transition-colors cursor-pointer"
+                    className="p-1.5 hover:text-[#60A5FA] transition-colors cursor-pointer"
                     aria-label={isPlaying ? 'Pause' : 'Play'}
                   >
                     {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
@@ -287,7 +287,7 @@ export const CampusVideoSection: React.FC = () => {
                         videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
                       }
                     }}
-                    className="p-1.5 hover:text-[#818CF8] transition-colors cursor-pointer"
+                    className="p-1.5 hover:text-[#60A5FA] transition-colors cursor-pointer"
                     title="Replay from start"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
@@ -295,10 +295,10 @@ export const CampusVideoSection: React.FC = () => {
 
                   <button
                     onClick={toggleMute}
-                    className="p-1.5 hover:text-[#818CF8] transition-colors cursor-pointer"
+                    className="p-1.5 hover:text-[#60A5FA] transition-colors cursor-pointer"
                     aria-label={isMuted ? 'Unmute' : 'Mute'}
                   >
-                    {isMuted ? <VolumeX className="w-4 h-4 text-rose-400" /> : <Volume2 className="w-4 h-4 text-[#818CF8]" />}
+                    {isMuted ? <VolumeX className="w-4 h-4 text-rose-400" /> : <Volume2 className="w-4 h-4 text-[#60A5FA]" />}
                   </button>
 
                   <span className="text-white/20">|</span>
@@ -308,12 +308,12 @@ export const CampusVideoSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="hidden sm:inline font-mono text-[11px] text-[#818CF8]">
+                  <span className="hidden sm:inline font-mono text-[11px] text-[#60A5FA]">
                     HD 1080p
                   </span>
                   <button
                     onClick={handleFullscreen}
-                    className="p-1.5 hover:text-[#818CF8] transition-colors cursor-pointer"
+                    className="p-1.5 hover:text-[#60A5FA] transition-colors cursor-pointer"
                     aria-label="Fullscreen"
                   >
                     <Maximize className="w-4 h-4" />
