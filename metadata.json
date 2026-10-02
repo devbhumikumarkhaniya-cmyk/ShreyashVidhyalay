@@ -1,0 +1,6 @@
+{
+  "name": "Trident Public School - Admissions 2026–27",
+  "description": "Official portal and online admission platform for Trident Public School. Learn, Grow, Achieve in a nurturing, student-centered environment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
