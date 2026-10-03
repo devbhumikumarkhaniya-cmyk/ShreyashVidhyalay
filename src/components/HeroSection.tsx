@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
           ref={videoContainerRef}
           className="absolute inset-0 w-full h-full z-0 overflow-hidden"
         >
-          {/* Video spanning full background with sleek dark grading */}
+          {/* Video spanning full background with vibrant, clear brightness */}
           <video
             ref={videoRef}
             src={SCHOOL_INFO.heroVideoUrl}
@@ -85,23 +85,33 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center scale-105 brightness-[0.68] contrast-[1.10]"
+            className="w-full h-full object-cover object-center scale-105 brightness-[0.96] contrast-[1.03]"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
+            onLoadedData={(e) => {
+              const v = e.currentTarget;
+              v.muted = true;
+              v.play().catch(() => {});
+            }}
+            onCanPlay={(e) => {
+              const v = e.currentTarget;
+              v.muted = true;
+              v.play().catch(() => {});
+            }}
           />
 
-          {/* Additional dark scrim over video */}
-          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+          {/* Minimal ambient scrim so video is crystal clear */}
+          <div className="absolute inset-0 bg-black/10 pointer-events-none" />
 
-          {/* Black shaded vertical gradient behind text */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-[520px] lg:w-[580px] bg-gradient-to-r from-black/95 via-black/75 to-transparent pointer-events-none" />
+          {/* Narrow Left-Side Patti Gradient (Subtle strip behind text only) */}
+          <div className="absolute inset-y-0 left-0 w-[240px] sm:w-[320px] lg:w-[380px] bg-gradient-to-r from-black/85 via-black/40 to-transparent pointer-events-none" />
 
-          {/* Electric Blue ambient glow within the left shaded area */}
-          <div className="absolute inset-y-0 left-0 w-[420px] bg-[radial-gradient(ellipse_at_left,_rgba(37,99,235,0.22),_transparent_70%)] pointer-events-none" />
+          {/* Electric Blue ambient glow within the left strip */}
+          <div className="absolute inset-y-0 left-0 w-[260px] bg-[radial-gradient(ellipse_at_left,_rgba(37,99,235,0.25),_transparent_75%)] pointer-events-none" />
 
-          {/* Top & bottom vignetting for framing */}
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/90 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08080a] to-transparent pointer-events-none" />
+          {/* Light top & bottom vignetting for framing */}
+          <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08080a] to-transparent pointer-events-none" />
 
           {/* Video Control Floating Badge */}
           <div className="absolute bottom-5 right-5 z-20 flex items-center gap-2 bg-[#08080a]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-blue-500/30 text-xs text-blue-100 shadow-xl">
@@ -138,21 +148,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick, onExplor
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-20">
           <div className="max-w-2xl lg:max-w-xl text-left">
             {/* Kicker / Eyebrow in Regal Font with Blue Accent */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase mb-4 border-l-2 border-[#2563EB] pl-3 py-0.5">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase mb-4 border-l-2 border-[#2563EB] pl-3 py-0.5 backdrop-blur-[4px] bg-black/25 rounded-r-md">
               <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
               <span className="font-regal">Admissions Open {SCHOOL_INFO.session} · {SCHOOL_INFO.affiliation}</span>
             </div>
 
             {/* Giant Editorial Serif Headline */}
-            <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-[68px] font-medium tracking-tight text-white leading-[1.08] drop-shadow-md">
+            <h1 className="font-serif-luxury text-4xl sm:text-6xl lg:text-[68px] font-medium tracking-tight text-white leading-[1.08] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
               Learn. Grow.{' '}
-              <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#93C5FD] via-[#60A5FA] to-[#2563EB] block sm:inline drop-shadow">
+              <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#93C5FD] via-[#60A5FA] to-[#2563EB] block sm:inline drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Achieve.
               </span>
             </h1>
 
             {/* Subheading text */}
-            <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-200 font-light leading-relaxed max-w-lg drop-shadow">
+            <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-100 font-light leading-relaxed max-w-lg drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
               A caring environment where every student is supported, encouraged and inspired to reach their highest potential.
             </p>
 
